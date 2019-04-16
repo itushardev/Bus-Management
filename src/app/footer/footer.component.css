@@ -1,0 +1,22 @@
+.icons-footer {
+	font-size: 60px;
+	cursor: pointer;
+	color: white;
+}
+
+.icons-footer:hover {
+	color: #0cacc4;
+}
+
+#bolder {
+	font-weight: 500;
+	font-size: 1.75rem;
+}
+
+@media (max-width: 992px) { 
+	.ini-flex {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+}

@@ -1,0 +1,28 @@
+table, tbody tr td {
+	border: 1px solid black;
+	border-right: 4px solid black;
+}
+
+
+thead, tfoot {
+	background-color: black;
+	color: #fff;
+	text-align: center;
+}
+table {
+	width: 50%;
+	margin: 30px auto;
+
+}
+#bottom {
+	border-bottom: 2px solid #fff; 
+}
+
+
+i {
+	font-size: 18px;
+}
+
+.rightAlign {
+	float: right;
+}

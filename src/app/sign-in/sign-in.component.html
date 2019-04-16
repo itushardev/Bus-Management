@@ -1,0 +1,31 @@
+<div id="inlay"> 
+	<div class="form">
+	<form [formGroup]="form" (ngSubmit)="signin()">
+
+		<div class="form-group">
+        <input id="enroll" type="text" formControlName="enroll" class=" myStyle textfield" placeholder="Eg:113303116" >
+       </div>
+
+
+
+       <div class="form-group">
+        <input id="password" type="password" formControlName="password" class=" myStyle textfield" placeholder="Password">
+      </div>
+
+    <div class="form-group">
+	        <input id="submit_button" type="submit" value="Sign In" class=" myStyle btn btn-outline-danger">
+	</div>
+	<div class="alert alert-success" *ngIf="form_insert_msg!=''">
+      {{form_insert_msg}}
+    </div>
+		<!-- <input class="myStyle textfield" type="email" name="email" placeholder="abc@xyz.com"> -->
+		<!-- <input class="myStyle textfield" type="number" name="enroll" placeholder="Eg: 01513303116" minlength="11" maxlength="11" min="00113303116" [(ngModel)]='enroll' >
+		<input class="myStyle textfield" type="password" name="password" placeholder="Password" [(ngModel)]='password'>
+		<input class="myStyle btn btn-outline-warning" type="button" name="button" value="Login" (click)="validation()"> -->
+	</form>
+	</div>
+</div>
+
+	
+
+

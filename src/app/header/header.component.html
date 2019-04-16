@@ -1,0 +1,62 @@
+<div >
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+		<div class="container-fluid">
+
+  				<a class="navbar-brand" routerLink="/" ><i class="fas fa-bus-alt"></i> BUS MANAGEMENT</a>
+			
+
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  			</button>
+
+	  		<div class="collapse navbar-collapse d-lg-flex justify-content-lg-end" id="navbarNavDropdown">
+	    		<ul class="nav navbar-nav ">
+			      <li class="nav-item">
+			        <a class="nav-link" routerLink="/" onclick="scrollWin(0,200)"><i class="fas fa-home"></i> Home</a>
+			      </li>
+			      <li class="nav-item">
+			        <a  *ngIf="token==null" class="nav-link" routerLink="/signIn" onclick="scrollWin(0,200)"><i class="fas fa-sign-in-alt"></i> SignIn</a>
+			      </li>
+			      <li class="nav-item">
+			        <a *ngIf="token==null" class="nav-link" routerLink="/signUp" onclick="scrollWin(0,200)"><i class="fas fa-user-plus"></i> SignUp</a>
+			      </li>
+			      <li class="nav-item">
+			        <a *ngIf="token!=null" class="nav-link" (click)="navi(person)" ><i class="fas fa-user"></i> MyShuttle</a>
+			      </li>
+			      <!-- <li class="nav-item">
+			        <a class="nav-link" routerLink="/busRoutes" onclick="scrollWin(0,200)"><i class="fas fa-search"></i> Bus Routes</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" routerLink="/driver" onclick="scrollWin(0,200)"> Driver</a>
+			      </li>
+			       --><li class="nav-item">
+			        <a *ngIf="token!=null" class="nav-link" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+			      </li>
+			      <!-- <li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			          Dropdown link
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+			          <a class="dropdown-item" href="#">Action</a>
+			          <a class="dropdown-item" href="#">Another action</a>
+			          <a class="dropdown-item" href="#">Something else here</a>
+			        </div>
+			      </li> -->
+	    		</ul>
+	 		 </div>
+		</div>
+	</nav>
+	
+	<div class="container-fluid backg mt-7">
+		<div class="row mr-2 mb-3">
+			<div class="col-3 pt-3 pb-3">
+				<img src="assets/IMG/bus.jpg">
+			</div>
+			<div class="col-9 text-center my-auto mystyle">
+				<h1>SKYLINE SHUTTLES</h1>
+			</div>
+		</div>
+	</div>
+	
+</div>
+

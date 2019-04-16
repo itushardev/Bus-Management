@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/css/bootstrap.min.css';
+body {
+	background-color: #0ccac4;
+	font-family: Raleway;
+	/*5CDBD6*/
+}
+.textfield {
+	background: black;
+	color: white;
+	border: black;
+}
+
+
+.myStyle {
+	/*position: relative;*/
+	/*left: 220px;*/
+	display: block;
+	text-align: center;
+	margin: 25px auto;
+	padding: 10px;
+}
+
+.nav-link {
+	cursor: pointer;
+}
+
+
+.forButton {
+	margin: 0px 10px;
+}
+
+.rightAlign {
+	float: center;
+
+}

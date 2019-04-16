@@ -1,0 +1,39 @@
+<div *ngIf="token==null">
+	<h1 class="myStyle">Login please! </h1>
+	<h3 class="myStyle"><a routerLink="/signIn">Click here</a> to redirect to sign in page</h3>
+</div>
+<div *ngIf="token!=null">
+	<h1 class="myStyle">Bus Routes</h1>
+	<input class="textfield myStyle" type="text" name="search" placeholder="Search" [(ngModel)]="searchInput">
+	<button class="btn btn-dark myStyle" (click)=myRoute()> My Route</button>
+					 <table>
+		                 <thead>
+		                   <tr>
+		                     <th>Bus Route Number</th>
+		                     <th>Bus Route Name</th>
+		                     <th>From - To</th>
+		                   </tr>
+		                 </thead>
+		                 <tbody>
+		                    <tr *ngFor="let eachbus of routeList | routeFilter:searchInput">
+		                    	<!-- <ng-container *ngIf="i == 0"> -->
+		               			<!-- <td>{{eachbus.stop}}</td> -->
+		                      <td >{{eachbus.busNo}}</td>
+		                      <td ><a routerLink="/routeDetails/{{eachbus.busNo}}" >{{eachbus.routeName}}</a></td>  
+		                      <td ><a routerLink="/routeDetails/{{eachbus.busNo}}" >{{eachbus.routeStart}} - {{eachbus.routeEnd}}</a></td>
+		                  <!-- </ng-container> -->
+		                    </tr>
+		                    <!-- <tr *ngIf="routeList.stops.length <= 0">Loading Data</tr> -->
+		                    	
+		                 </tbody>
+                 		<tfoot>
+                 			<tr>
+		                     <th>Bus Route Number</th>
+		                     <th>Bus Route Name</th>
+		                     <th>From - To</th>
+		                   </tr>
+                 		</tfoot>
+		              </table>
+				
+				 
+</div>

@@ -1,0 +1,57 @@
+<div *ngIf="token==null">
+  <h1 class="myStyle">Login please! </h1>
+  <h3 class="myStyle"><a routerLink="/signIn">Click here</a> to redirect to sign in page</h3>
+</div>
+<div *ngIf="token!=null">
+<div *ngIf="routeList!=0">
+    <div class="date">
+      <p>Date: {{today | date:'dd.MM.y'}}</p>
+      <!-- <p>Date: {{today | date:'hh.mm.ss'}}</p> -->
+    </div>
+
+    <div class="alert alert-success myStyle" *ngIf="insertMsg!=''">
+      {{insertMsg}}
+    </div>  
+  <div>
+    <button class="forButton btn btn-dark" (click)="reset()"><i class="fas fa-redo"></i> Reset</button>
+    <button class="forButton rightAlign btn btn-dark textChange" (click)="check()"><i class="fas fa-check"></i> Live Checking</button>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3" id="bottom">
+        Driver Name: {{routeList.driverName}}
+        --------- Bus No.: {{routeList.busNo}}
+      </th>
+    </tr>
+    <tr>
+      <th colspan="3" id="bottom">{{routeList.routeName}}</th>
+    </tr>
+    <tr>
+      <th colspan="3">{{routeList.routeStart}} to {{routeList.routeEnd}}</th>
+    </tr>
+	</thead>
+	<tbody >
+      <!-- <td>{{Stop.Stops}}</td> -->
+		
+     
+        <tr *ngFor="let Stop of routeList.stops;let i = index">
+            
+          <td class="col-10">{{Stop.stopName}}</td>
+          <td >{{Stop.hasArrived}}</td>
+          <td class="col-2">{{Stop.stopETA}}</td>
+          
+        </tr>
+     
+		
+	</tbody>
+  <tfoot>
+    <tr>
+      <th colspan="3">{{routeList.routeStart}} to {{routeList.routeEnd}}</th>
+    </tr>
+  </tfoot>
+</table>
+
+</div>
+<div *ngIf="routeList==0">No route round</div>
+</div>
