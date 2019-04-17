@@ -23,7 +23,7 @@ export class RouteDetailsComponent {
   }
 
   updatebus(routeID,token){
-    this.httpClient.get('http://localhost:3000/users_api/updateStudentBus?routeID='+routeID+'&token='+token)
+    this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/updateStudentBus?routeID='+routeID+'&token='+token)
       .subscribe(
        (data: any) => {
           if (data.succ===false) {
@@ -39,7 +39,7 @@ export class RouteDetailsComponent {
 
     live() {
       window.localStorage.setItem('isActive','YES');
-      window.location.href='http://localhost:4200/'+this.router.url;
+      window.location.href='https://itushardev.github.io/Bus-Management/'+this.router.url;
       }
 
       refresh(routeID){
@@ -60,7 +60,7 @@ export class RouteDetailsComponent {
 
 
   reloadData(routeID) {
-    this.httpClient.get('http://localhost:3000/users_api/get?routeID='+routeID)
+    this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/get?routeID='+routeID)
       .subscribe(
         (data: any[]) => {
           

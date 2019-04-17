@@ -23,7 +23,7 @@ export class BusRoutesComponent implements OnInit {
    routeList: any;
   
  myRoute() {
-      this.httpClient.get('http://localhost:3000/users_api/myRoute?token='+this.token)
+      this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/myRoute?token='+this.token)
       .subscribe(
         (data: any[]) => {
           if (data.length <= 0) {
@@ -37,7 +37,7 @@ export class BusRoutesComponent implements OnInit {
 
 reloadData() {
 
-    this.httpClient.get('http://localhost:3000/users_api/get')
+    this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/get')
       .subscribe(
         (data: any[]) => {
           if (data.length <= 0) {

@@ -36,7 +36,7 @@ export class SignInComponent{
    signin() {
     console.log(this.form.value);
     console.log('"calling singin function"');
-    this.httpClient.post('http://localhost:3000/users_api/check',
+    this.httpClient.post('https://bus-management-server-heroku.herokuapp.com/users_api/check',
       this.form.value)
       .subscribe(
        (data: any) => {
@@ -61,14 +61,14 @@ export class SignInComponent{
          
             if(data.person == "Student"){
             setTimeout(function(){
-              window.location.href="http://localhost:4200/busRoutes";
+              window.location.href="https://itushardev.github.io/Bus-Management/busRoutes";
               // res.redirect("/signIn");
             },2000);
             }
             else if(data.person == "Admin")
             {
               setTimeout(function(){
-              window.location.href="http://localhost:4200/admin";
+              window.location.href="https://itushardev.github.io/Bus-Management/admin";
               // res.redirect("/signIn");
             },2000); 
             }
@@ -76,7 +76,7 @@ export class SignInComponent{
             {
               setTimeout(function(){
               // window.location.href="http://localhost:4200/driver?name="+data[0].full_name;
-              window.location.href="http://localhost:4200/driver";
+              window.location.href="https://itushardev.github.io/Bus-Management/driver";
               // res.redirect("/signIn");
             },2000); 
               

@@ -32,7 +32,7 @@ export class SignUpComponent implements OnInit {
   signup() {
     console.log(this.form.value);
     console.log('"calling singup function"');
-    this.httpClient.post('http://localhost:3000/users_api/insert',
+    this.httpClient.post('https://bus-management-server-heroku.herokuapp.com/users_api/insert',
       this.form.value)
       .subscribe(
         (data: any) => {
@@ -40,7 +40,7 @@ export class SignUpComponent implements OnInit {
             this.form.reset();
             this.form_insert_msg = 'Successfull Signup !';
             setTimeout(function(){
-            	window.location.href="http://localhost:4200/signIn";
+            	window.location.href="https://itushardev.github.io/Bus-Management/signIn";
               // res.redirect("/signIn");
             },2000);
           } else {

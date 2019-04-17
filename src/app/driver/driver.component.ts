@@ -19,7 +19,7 @@ export class DriverComponent implements OnInit {
   	this.dataLoader();
   }
   dataLoader(){
-  	this.httpClient.get('http://localhost:3000/users_api/driveRoute?busNo='+this.busNo)
+  	this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/driveRoute?busNo='+this.busNo)
       .subscribe(
         (data: any[]) => {
           if (data[0].length <= 0) {
@@ -46,7 +46,7 @@ export class DriverComponent implements OnInit {
       this.count++;
       }
 
-    this.httpClient.get('http://localhost:3000/users_api/tick?stop='+this.nameOfStop+'&routeID='+this.busNo)
+    this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/tick?stop='+this.nameOfStop+'&routeID='+this.busNo)
       .subscribe(
         (data: any) => {
           console.log(data);
@@ -65,7 +65,7 @@ export class DriverComponent implements OnInit {
     document.getElementsByClassName('textChange')[0].innerHTML=
         '<i _ngcontent-c3="" class="fas fa-check"></i> Live Tracking';
 
-      this.httpClient.get('http://localhost:3000/users_api/reset?routeID='+this.busNo)
+      this.httpClient.get('https://bus-management-server-heroku.herokuapp.com/users_api/reset?routeID='+this.busNo)
       .subscribe(
         (data: any) => {
           console.log(data);
